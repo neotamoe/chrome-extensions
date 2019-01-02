@@ -1,0 +1,22 @@
+{
+    "name": "Food Quiz First",
+    "version": "1.0",
+    "description": "Answer a food quiz question before browsing",
+    "permissions": [
+        "tabs", 
+        "activeTab",
+        "http://sci123.herokuapp.com/#/quiz/extension",
+        "*://*/*"
+    ],
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    },
+    "chrome_url_overrides": {
+        "newtab": "newtab.html"
+    },
+    "manifest_version": 2,
+    "browser_action": {
+        "default_popup": "popup.html"
+    }
+}
