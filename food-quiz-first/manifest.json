@@ -6,7 +6,8 @@
         "tabs", 
         "activeTab",
         "http://sci123.herokuapp.com/#/quiz/extension",
-        "*://*/*"
+        "*://*/*",
+        "background"
     ],
     "background": {
         "scripts": ["background.js"],

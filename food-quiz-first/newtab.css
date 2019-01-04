@@ -10,3 +10,11 @@ body{
     height: 30px;
     margin-right: 10px;
 }
+
+#A,#B,#C,#D {
+    display: inline
+}
+
+button {
+    margin: 10px;
+}

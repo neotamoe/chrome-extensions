@@ -8,14 +8,15 @@
     <h1>Quiz Question</h1>
     <div class="container">
         <div>
-          <h2>QUESTION HERE</h2>
+          <h2><span id="question"></span></h2>
           <div id="answer">
-            <p><button type="button" id="A"> A </button>ANSWER A</p>
-            <p><button type="button" id="B"> B </button>ANSWER B</p>
-            <p><button type="button" id="C"> C </button>ANSWER C</p>
-            <p><button type="button" id="D"> D </button>ANSWER D</p>  
+            <button type="button" id="btnA"> A </button><p id="A">ANSWER A</p><br/>
+            <button type="button" id="btnB"> B </button><p id="B">ANSWER B</p><br/>
+            <button type="button" id="btnC"> C </button><p id="C">ANSWER C</p><br/>
+            <button type="button" id="btnD"> D </button><p id="D">ANSWER D</p><br/>  
           </div>
-          <!-- <p ng-if="qc.showMessage===true" class="answer" ng-style="qc.message==='CORRECT!' && {'color':'green'}">{{qc.message}}</p> -->
+          <p id="correct" hidden>Correct!</p>
+          <p id="wrong" hidden></p>
           <button id="submit">Submit</button>
         </div>
       </div>

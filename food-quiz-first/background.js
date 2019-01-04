@@ -1,21 +1,16 @@
-// chrome.runtime.onInstalled.addListener(function() {
-    // chrome.storage.sync.set({color: '#3aa757'}, function() {
-    //     console.log("The color is green.");
-    // });
-    // chrome.declarativeContent.onPageChanged.removeRules(undefined, function() {
-    //     chrome.declarativeContent.onPageChanged.addRules([{
-    //       conditions: [new chrome.declarativeContent.PageStateMatcher({
-    //         pageUrl: {hostEquals: 'developer.chrome.com'},
-    //       })
-    //       ],
-    //           actions: [new chrome.declarativeContent.ShowPageAction()]
-    //     }]);
-    //   });
-// });
-
 chrome.runtime.onInstalled.addListener(function() {
     // add an action here
     chrome.tabs.onCreated.addListener(function (tab){
         console.log('new tab created!');
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "https://floating-cove-50492.herokuapp.com/api/questions", false);
+        xhr.send();
+
+        var result = JSON.parse(xhr.responseText);
+        result = result.data[0];
+        console.log(result);
+        console.log(result.question)
     });
+    
+    chrome.runtime.sendMessage({}, function(response) { document.body.style.backgroundcolor="red"; });
 });
