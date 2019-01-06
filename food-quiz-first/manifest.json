@@ -7,7 +7,8 @@
         "activeTab",
         "http://sci123.herokuapp.com/#/quiz/extension",
         "*://*/*",
-        "background"
+        "background",
+        "http://localhost/"
     ],
     "background": {
         "scripts": ["background.js"],
@@ -19,5 +20,6 @@
     "manifest_version": 2,
     "browser_action": {
         "default_popup": "popup.html"
-    }
+    },
+    "web_accessible_resources": ["xhr.js"]
 }

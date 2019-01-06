@@ -1,9 +1,5 @@
-var xhr = new XMLHttpRequest();
-xhr.open("GET", "https://floating-cove-50492.herokuapp.com/api/questions", false);
-xhr.send();
-
-var result = JSON.parse(xhr.responseText);
-result = result.data[0];
+var backgroundPage = chrome.extension.getBackgroundPage();
+var result = backgroundPage.getQuestion();
 
 document.getElementById("question").innerHTML = result.question;
 document.getElementById("A").innerHTML = result.a;
@@ -43,7 +39,7 @@ function checkB() {
 function checkC() {
     if(result.answer == "C"){
         document.getElementById("wrong").setAttribute("class", "hidden");
-        document.getElementById("correct").removeAttribute('hidden');
+        document.getElementById("correct").removeAttribute("class");
     } else {
         document.getElementById("correct").setAttribute("class", "hidden");
         document.getElementById("wrong").removeAttribute("class")

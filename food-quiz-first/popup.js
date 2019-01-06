@@ -5,5 +5,4 @@ $(document).ready(function(){
       chrome.tabs.create({url: $(this).attr('href')});
       return false;
     });
-    
 });
